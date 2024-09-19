@@ -9,10 +9,16 @@ RDRC is works on the reschange.dll library that I made to enable the development
 reschange.dll interfaces with the windows runtime using winuser.h specified API's. If you want to develop using reschange.dll, The brief documentation of the API functions available to you are:
 
 INT getScreenHeight() : Returns the Screen Height of the Current Dsiplay.
+
 INT getScreenWidth() : Returns The Screen Width Of the Current Display.
+
 FLOAT getScreenRefresh() : Returns The Refresh Rate of the current Display;
+
 BOOL getMonitorInfo(int widths_param[60],  int heights_param[60], float freqs_param[60]) : takes in three containers(arrays) of size 60 each from the Frontend program, each for supported widths, heights and corresponding refresh rates and fills them with respective values (see Form1.cs for clarity), Returns True if function succeeds.
+
 BOOL startProcess(LPCWSTR path) : Takes in the path of the Application to be executed and executes it, returns True if successful.
+
 BOOL changeScreenResolution(width, height, freq) : Changes the windows resolution to a given width, height and freq. Returns True if successful.
+
 BOOL LaunchWithResolution(int width, int height, float freq, int prevWidth, int prevHeight, float prevFreq) : Takes in the height, width and freq for the resolution to be changed to and the previous height width and frequncy of the display from the Frontend and manages the running status of the launched application. Returns False if Application is closed, Returns True if the Launched Application is running with the Changed Resolution. 
 
