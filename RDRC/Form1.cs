@@ -10,6 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//WORK IN PROGRESS
+//USE AS IS AT YOUR OWN RISK
+//COPYRIGHT: RONNIE BANERJEE
+
 namespace RDRC
 {
     public partial class Form1 : Form
