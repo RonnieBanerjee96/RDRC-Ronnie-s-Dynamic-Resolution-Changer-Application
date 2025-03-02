@@ -27,7 +27,11 @@ bld/
 [Oo]ut/
 [Ll]og/
 [Ll]ogs/
+<<<<<<< HEAD
 /bin/
+=======
+[Bb]in/
+>>>>>>> 3e8f5456a96c102e27cb93b12d96b6ca8c1d47bc
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
