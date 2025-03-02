@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,25 +54,21 @@
             this.label_startfreq = new System.Windows.Forms.Label();
             this.label_selectedfreq_number = new System.Windows.Forms.Label();
             this.label_selectfreq = new System.Windows.Forms.Label();
-            this.Timer_isProcessFound = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.ForeColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(278, 227);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Get Resolutions";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Lime;
             this.label2.Location = new System.Drawing.Point(356, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
@@ -83,7 +78,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Lime;
             this.label1.Location = new System.Drawing.Point(356, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 13);
@@ -92,22 +86,18 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.button2.ForeColor = System.Drawing.Color.Lime;
             this.button2.Location = new System.Drawing.Point(278, 256);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 23);
             this.button2.TabIndex = 0;
             this.button2.Text = "Apply Resolution";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
+            this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.Lime;
             this.label3.Location = new System.Drawing.Point(277, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
@@ -117,7 +107,6 @@
             // label_cr
             // 
             this.label_cr.AutoSize = true;
-            this.label_cr.ForeColor = System.Drawing.Color.Lime;
             this.label_cr.Location = new System.Drawing.Point(277, 42);
             this.label_cr.Name = "label_cr";
             this.label_cr.Size = new System.Drawing.Size(97, 13);
@@ -127,7 +116,6 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Lime;
             this.label5.Location = new System.Drawing.Point(277, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
@@ -137,7 +125,6 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Lime;
             this.label6.Location = new System.Drawing.Point(276, 89);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
@@ -147,19 +134,15 @@
             // listView1
             // 
             this.listView1.AutoArrange = false;
-            this.listView1.BackColor = System.Drawing.SystemColors.ControlText;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.SystemColors.Control;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(12, 19);
+            this.listView1.Location = new System.Drawing.Point(12, 42);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(244, 381);
             this.listView1.TabIndex = 4;
@@ -175,18 +158,16 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Height";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader2.Width = 70;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Frequency";
-            this.columnHeader3.Width = 95;
+            this.columnHeader3.Text = "Refresh Rate";
+            this.columnHeader3.Width = 70;
             // 
             // label_sr
             // 
             this.label_sr.AutoSize = true;
-            this.label_sr.ForeColor = System.Drawing.Color.Lime;
             this.label_sr.Location = new System.Drawing.Point(275, 136);
             this.label_sr.Name = "label_sr";
             this.label_sr.Size = new System.Drawing.Size(105, 13);
@@ -196,7 +177,6 @@
             // label_sh
             // 
             this.label_sh.AutoSize = true;
-            this.label_sh.ForeColor = System.Drawing.Color.Lime;
             this.label_sh.Location = new System.Drawing.Point(356, 180);
             this.label_sh.Name = "label_sh";
             this.label_sh.Size = new System.Drawing.Size(25, 13);
@@ -206,7 +186,6 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Lime;
             this.label8.Location = new System.Drawing.Point(277, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
@@ -216,7 +195,6 @@
             // label_sw
             // 
             this.label_sw.AutoSize = true;
-            this.label_sw.ForeColor = System.Drawing.Color.Lime;
             this.label_sw.Location = new System.Drawing.Point(356, 158);
             this.label_sw.Name = "label_sw";
             this.label_sw.Size = new System.Drawing.Size(25, 13);
@@ -226,7 +204,6 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Lime;
             this.label10.Location = new System.Drawing.Point(276, 180);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
@@ -239,20 +216,17 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.ForeColor = System.Drawing.Color.Lime;
             this.button3.Location = new System.Drawing.Point(383, 322);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(55, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Browse";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label_file
             // 
             this.label_file.AutoSize = true;
-            this.label_file.ForeColor = System.Drawing.Color.Lime;
             this.label_file.Location = new System.Drawing.Point(277, 327);
             this.label_file.Name = "label_file";
             this.label_file.Size = new System.Drawing.Size(95, 13);
@@ -261,20 +235,17 @@
             // 
             // button_launch
             // 
-            this.button_launch.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_launch.ForeColor = System.Drawing.Color.Lime;
             this.button_launch.Location = new System.Drawing.Point(278, 364);
             this.button_launch.Name = "button_launch";
             this.button_launch.Size = new System.Drawing.Size(160, 23);
             this.button_launch.TabIndex = 5;
             this.button_launch.Text = "Launch";
-            this.button_launch.UseVisualStyleBackColor = false;
+            this.button_launch.UseVisualStyleBackColor = true;
             this.button_launch.Click += new System.EventHandler(this.button_launch_Click);
             // 
             // label_startfreq_number
             // 
             this.label_startfreq_number.AutoSize = true;
-            this.label_startfreq_number.ForeColor = System.Drawing.Color.Lime;
             this.label_startfreq_number.Location = new System.Drawing.Point(356, 113);
             this.label_startfreq_number.Name = "label_startfreq_number";
             this.label_startfreq_number.Size = new System.Drawing.Size(25, 13);
@@ -284,7 +255,6 @@
             // label_startfreq
             // 
             this.label_startfreq.AutoSize = true;
-            this.label_startfreq.ForeColor = System.Drawing.Color.Lime;
             this.label_startfreq.Location = new System.Drawing.Point(276, 113);
             this.label_startfreq.Name = "label_startfreq";
             this.label_startfreq.Size = new System.Drawing.Size(73, 13);
@@ -294,7 +264,6 @@
             // label_selectedfreq_number
             // 
             this.label_selectedfreq_number.AutoSize = true;
-            this.label_selectedfreq_number.ForeColor = System.Drawing.Color.Lime;
             this.label_selectedfreq_number.Location = new System.Drawing.Point(357, 202);
             this.label_selectedfreq_number.Name = "label_selectedfreq_number";
             this.label_selectedfreq_number.Size = new System.Drawing.Size(25, 13);
@@ -304,23 +273,16 @@
             // label_selectfreq
             // 
             this.label_selectfreq.AutoSize = true;
-            this.label_selectfreq.ForeColor = System.Drawing.Color.Lime;
             this.label_selectfreq.Location = new System.Drawing.Point(277, 202);
             this.label_selectfreq.Name = "label_selectfreq";
             this.label_selectfreq.Size = new System.Drawing.Size(73, 13);
             this.label_selectfreq.TabIndex = 2;
             this.label_selectfreq.Text = "Refresh Rate:";
             // 
-            // Timer_isProcessFound
-            // 
-            this.Timer_isProcessFound.Interval = 50;
-            this.Timer_isProcessFound.Tick += new System.EventHandler(this.Timer_isProcessFound_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(450, 450);
             this.Controls.Add(this.label_file);
             this.Controls.Add(this.button_launch);
@@ -343,12 +305,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "RDRC";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -382,7 +341,6 @@
         private System.Windows.Forms.Label label_startfreq;
         private System.Windows.Forms.Label label_selectedfreq_number;
         private System.Windows.Forms.Label label_selectfreq;
-        private System.Windows.Forms.Timer Timer_isProcessFound;
     }
 }
 

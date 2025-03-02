@@ -4,11 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,13 +29,7 @@ namespace RDRC
         float[] freqs = new float[60];
         private bool processRunSucess;
         private bool isProcessRunning;
-        bool isProcessFound = false;
-        Form2 WaitingWindow = new Form2();
-
-
         IntPtr path;
-        IntPtr name;
-        
 
         [DllImport("reschange.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern bool changeScreenResolution(int width, int height, float freq);
@@ -52,32 +44,27 @@ namespace RDRC
         public static extern bool startProcess(IntPtr path);
 
         [DllImport("reschange.dll", CallingConvention = CallingConvention.StdCall)]
-        public static extern bool checkProcessRunningStatus(int selectedWidth, int selectedHeight, float selectedFreq, int prevWidth, int prevHeight, float startFreq, IntPtr name, IntPtr path);
-        
+        public static extern bool LaunchWithResolution(int selectedWidth, int selectedHeight, float selectedFreq, int prevWidth, int prevHeight, float startFreq);
         [DllImport("reschange.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern float getScreenRefresh();
-
-        [DllImport("reschange.dll", CallingConvention = CallingConvention.StdCall)]
-        public static extern bool getIsProcessFound();
-        [DllImport("reschange.dll", CallingConvention = CallingConvention.StdCall)]
-        public static extern bool findProcess(IntPtr name);
-
 
         public Form1()
         {
             InitializeComponent();
-            
+            this.screenWidth = getScreenWidth();
+            this.ScreenHeight = getScreenHeight();
+            this.startFreq = getScreenRefresh();
+            label2.Text = getScreenHeight().ToString();
+            label1.Text = getScreenWidth().ToString();
+            label_startfreq_number.Text = getScreenRefresh().ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
             
-            Array.Clear(freqs, 0, freqs.Length);
-            Array.Clear(heights, 0, heights.Length);
-            Array.Clear(widths, 0, widths.Length);
-            listView1.Items.Clear();
             isSuccesfull = getMonitorInfo(widths, heights, freqs);
+            listView1.Items.Clear();
             foreach (var (value, index) in widths.Select((value, index) => (value, index)))
             {
                 ListViewItem LI = new ListViewItem();
@@ -133,43 +120,26 @@ namespace RDRC
             {
 
                 this.path = Marshal.StringToHGlobalUni(openFileDialog1.FileName);
-                this.name = Marshal.StringToHGlobalUni(Path.GetFileName(openFileDialog1.FileName));
                 label_file.Text = openFileDialog1.SafeFileName;
             }
         }
 
         private void button_launch_Click(object sender, EventArgs e)
         {
-            bool isProcessStartSuccessFull = startProcess(path);
-            if (isProcessStartSuccessFull && (selectedResolution[0] != 0 && selectedResolution[1] != 0))
+
+            processRunSucess = startProcess(path);
+            if (processRunSucess && selectedResolution[0] != 0 && selectedResolution[1] != 0)
             {
-                WaitingWindow.StartPosition = FormStartPosition.CenterParent;
-                
-                WaitingWindow.Show();
-                findProcess(name);
-                Timer_isProcessFound.Start();
+                isProcessRunning = LaunchWithResolution(selectedResolution[0], selectedResolution[1], selectedFreq, screenWidth, ScreenHeight, startFreq);
+                if (isProcessRunning)
+                {
+                    label5.Text = isProcessRunning.ToString();
+                }
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.screenWidth = getScreenWidth();
-            this.ScreenHeight = getScreenHeight();
-            this.startFreq = getScreenRefresh();
-            label2.Text = getScreenHeight().ToString();
-            label1.Text = getScreenWidth().ToString();
-            label_startfreq_number.Text = getScreenRefresh().ToString();
-        }
-
-        private void Timer_isProcessFound_Tick(object sender, EventArgs e)
-        {
-            isProcessFound = getIsProcessFound();
-            if (isProcessFound)
-            {
-                WaitingWindow.Hide();
-                checkProcessRunningStatus(selectedResolution[0], selectedResolution[1], selectedFreq, screenWidth, ScreenHeight, startFreq, name, path);
-                Timer_isProcessFound.Stop();
-            }
 
         }
     }

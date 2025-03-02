@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ronnies Dynamic Resolution Switcher")]
-[assembly: AssemblyDescription("Dynamic Resolution Switching Application")]
+[assembly: AssemblyTitle("WindowsFormsApp1")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ronnie Banerjee")]
-[assembly: AssemblyProduct("RDRS")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("WindowsFormsApp1")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
