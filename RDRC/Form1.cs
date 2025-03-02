@@ -87,11 +87,7 @@ namespace RDRC
                 listView1.Items.Add(LI);
 
             }
-            //Console.WriteLine(isSuccesfull);
-            //Console.ReadKey();
-
-            //isSuccesfull = changeScreenResolution(1280, 720);
-            //Console.WriteLine(isSuccesfull);
+         
 
         }
 
